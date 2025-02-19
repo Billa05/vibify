@@ -20,7 +20,7 @@ function ResultsPage() {
           </ul>
         </div>
         <div className="button-container">
-          <Link to="/generate">
+          <Link to="/mood">
             <button className="generate-button">Generate Another</button>
           </Link>
           <button className="save-button">Save to Spotify</button>
