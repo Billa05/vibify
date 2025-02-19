@@ -1,14 +1,5 @@
-
-
-/* Spotify-inspired styles */
 body {
-  @apply bg-black text-white;
-}
-
-.btn-spotify {
-  @apply bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded;
-}
-
-.card-spotify {
-  @apply bg-gray-900 rounded-lg p-4;
+  background-color: #0C061C;
+  margin-left: 150px;
+  margin-right: 150px;
 }

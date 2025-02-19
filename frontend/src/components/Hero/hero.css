@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+.hero{
+    display: flex;
+    font-family: "Outfit", sans-serif;
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Pushes h1 left, image right */
+    padding: 20px;
+}
+
+h1{
+    font-family: "Outfit", sans-serif;
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+}
+h2{
+    font-size: 45px;
+    font-weight: 300;
+
+}
+
+/* Minimalist Button */
+.minimal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes text left and image right */
+    background: #1ED760;
+    border: 2px solid black;
+    color: black;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    outline: auto;
+    height: 66px;
+    width: 316px;
+    text-align: left;
+    gap: 10px; /* Adds spacing between text and image */
+  }
+  
+  .minimal-btn img {
+    width: 30px; /* Adjust icon size */
+    height: auto;
+  }
+  
+  .minimal-btn-dark {
+    display: flex;
+    align-items: center;
+     /* Pushes text left and image right */
+    background: #000000;
+    border: 1px solid #1ED760;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    outline: auto;
+    height: 66px;
+    width: 316px;
+    text-align: left;
+    gap: 10px; /* Adds spacing between text and image */
+  }
+  

@@ -1,0 +1,104 @@
+.mood-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+}
+
+.mood-btn {
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, box-shadow 0.2s;
+    min-width: 130px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mood-btn:nth-child(1) { background: #FFC75F; } /* Happy - Soft Yellow */
+.mood-btn:nth-child(2) { background: #5DA2D5; } /* Sad - Muted Blue */
+.mood-btn:nth-child(3) { background: #FF6F61; } /* Angry - Warm Coral */
+.mood-btn:nth-child(4) { background: #A5D6A7; } /* Chill - Pastel Green */
+.mood-btn:nth-child(5) { background: #D291BC; } /* Stressed - Dusty Mauve */
+.mood-btn:nth-child(6) { background: #F48FB1; } /* In Love - Soft Pink */
+
+.mood-btn.selected {
+    border: 2px solid #333;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mood-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mood-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.generate-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    margin-top: 20px;
+}
+
+.generate-button:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.generate-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
