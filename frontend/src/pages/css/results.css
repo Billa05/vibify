@@ -1,0 +1,49 @@
+.container {
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    padding: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.playlist {
+    background-color: #1f1f1f;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.playlist-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.playlist-list {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-right: 50px;
+}
+
+.generate-button {
+    margin-right: 1rem;
+    color: black;
+}
+
+.save-button {
+    background-color: #22c55e;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #16a34a;
+}

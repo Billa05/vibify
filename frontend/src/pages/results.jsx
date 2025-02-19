@@ -1,14 +1,14 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import './css/results.css';
 
 function ResultsPage() {
   return (
-    <div className="min-h-screen bg-black text-white p-8">
-      <h1 className="text-4xl font-bold mb-8">Your Generated Playlist</h1>
-      <div className="bg-gray-900 p-6 rounded-lg mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Awesome Mix</h2>
-        <ul className="list-disc list-inside">
+    <div className="container">
+      <h1 className="title">Your Generated Playlist</h1>
+      <div className="playlist">
+        <h2 className="playlist-title">Awesome Mix</h2>
+        <ul className="playlist-list">
           <li>Song 1 - Artist 1</li>
           <li>Song 2 - Artist 2</li>
           <li>Song 3 - Artist 3</li>
@@ -16,12 +16,14 @@ function ResultsPage() {
           <li>Song 5 - Artist 5</li>
         </ul>
       </div>
-      <Link to="/generate">
-        <Button variant="outline" className="mr-4 text-black">
-          Generate Another
-        </Button>
-      </Link>
-      <Button className="bg-green-500 hover:bg-green-600 text-white">Save to Spotify</Button>
+      <div className="button-container">
+        <Link to="/generate">
+          <Button variant="outline" className="generate-button">
+            Generate Another
+          </Button>
+        </Link>
+        <Button className="save-button">Save to Spotify</Button>
+      </div>
     </div>
   );
 }

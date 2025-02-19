@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import "./css/generate.css";
 
 const moods = ["Happy", "Sad", "Energetic", "Relaxed", "Focused"];
 const genres = ["Pop", "Rock", "Hip Hop", "Electronic", "Classical", "Jazz"];
@@ -23,41 +24,41 @@ function GeneratePage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white p-8">
-      <h1 className="text-4xl font-bold mb-8">Generate Your Playlist</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card className="bg-gray-900 text-white">
+    <div className="container">
+      <h1 className="title">Generate Your Playlist</h1>
+      <div className="grid">
+        <Card className="card">
           <CardHeader>
             <CardTitle>Select Moods</CardTitle>
           </CardHeader>
           <CardContent>
             {moods.map((mood) => (
-              <div key={mood} className="flex items-center space-x-2 mb-2">
+              <div key={mood} className="item">
                 <input
                   type="checkbox"
                   id={`mood-${mood}`}
                   checked={selectedMoods.includes(mood)}
                   onChange={() => handleMoodChange(mood)}
-                  className="form-checkbox"
+                  className="checkbox"
                 />
                 <label htmlFor={`mood-${mood}`}>{mood}</label>
               </div>
             ))}
           </CardContent>
         </Card>
-        <Card className="bg-gray-900 text-white">
+        <Card className="card">
           <CardHeader>
             <CardTitle>Select Genres</CardTitle>
           </CardHeader>
           <CardContent>
             {genres.map((genre) => (
-              <div key={genre} className="flex items-center space-x-2 mb-2">
+              <div key={genre} className="item">
                 <input
                   type="checkbox"
                   id={`genre-${genre}`}
                   checked={selectedGenres.includes(genre)}
                   onChange={() => handleGenreChange(genre)}
-                  className="form-checkbox"
+                  className="checkbox"
                 />
                 <label htmlFor={`genre-${genre}`}>{genre}</label>
               </div>
@@ -65,7 +66,7 @@ function GeneratePage() {
           </CardContent>
         </Card>
       </div>
-      <Button onClick={handleSubmit} className="mt-8 bg-green-500 hover:bg-green-600 text-white">
+      <Button onClick={handleSubmit} className="generate-button">
         Generate Playlist
       </Button>
     </div>
