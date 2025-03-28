@@ -1,5 +1,5 @@
 import React from "react";
-import './Hero.css';
+import '../styles/Hero.css';
 import spotify_ui from "../assets/spotify_ui.png";
 import spotify from "../assets/spotify_dark.png";
 

@@ -1,6 +1,5 @@
 import React from "react";
-import "./Navbar.css";
-import { Link } from "react-router-dom";
+import "../styles/Navbar.css";
 import spotify from "../assets/spotify.png";
 function Navbar() {
     return (
