@@ -13,16 +13,6 @@ const PlaylistResult = ({ playlist, onCreateNew }) => {
             alt="Playlist cover"
             className="playlist-cover"
           />
-          {/* {playlist.playlist.images && playlist.playlist.images[0] ? (
-            <img 
-              src={playlist.playlist.images[0].url} 
-              alt="Playlist cover" 
-              className="playlist-cover"
-            />
-          ) : (
-            <div className="playlist-cover-placeholder"></div>
-          )} */}
-
           <div className="playlist-details">
             <h3>{playlist.playlist.name}</h3>
             <p className="playlist-description">{playlist.playlist.description}</p>

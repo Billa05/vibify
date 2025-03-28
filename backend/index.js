@@ -1,24 +1,21 @@
-// Import packages we need for our app
-const express = require('express'); // This helps us make a web server
-const cors = require('cors'); // This lets our frontend talk to our backend
-const axios = require('axios'); // This helps us make HTTP requests
-const querystring = require('querystring'); // This helps format URL parameters
-const cookieParser = require('cookie-parser'); // This helps us handle cookies
-const dotenv = require('dotenv'); // This loads our secret keys from a file
-const path = require('path'); // This helps with file paths
+const express = require('express'); 
+const cors = require('cors'); 
+const axios = require('axios'); 
+const querystring = require('querystring'); 
+const cookieParser = require('cookie-parser'); 
+const dotenv = require('dotenv'); 
+const path = require('path'); 
 
-// Load environment variables from .env file
 dotenv.config();
 
-// Store our Spotify API keys
-const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID; // Get client ID from .env file
-const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET; // Get client secret from .env file
-const REDIRECT_URI = process.env.REDIRECT_URI || 'http://localhost:8888/callback'; // Where Spotify sends users after login
-const FRONTEND_URI = process.env.FRONTEND_URI || 'http://localhost:3000'; // Our React app address
+const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID; 
+const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET; 
+const REDIRECT_URI = process.env.REDIRECT_URI || 'http://localhost:8888/callback'; 
+const FRONTEND_URI = process.env.FRONTEND_URI || 'http://localhost:3000'; 
 
-// Create our express app
+
 const app = express();
-const PORT = process.env.PORT || 8888; // The port our server will run on
+const PORT = process.env.PORT || 8888; 
 
 // Set up middleware (stuff that processes requests)
 app.use(express.json()); // This lets us read JSON from requests
@@ -98,13 +95,8 @@ function getMoodSearchTerms(mood) {
 // This is our main function that creates playlists
 async function generatePlaylist(accessToken, mood, genres, numSongs) {
   try {
-    // Create a list to store all the songs we find
     let allTracks = [];
-    
-    // This Set helps us avoid duplicate songs
     const processedTrackIds = new Set();
-    
-    // Get keywords that match the user's mood
     const moodTerms = getMoodSearchTerms(mood);
     
     // Step 1: Try to get the user's favorite artists to personalize the playlist
@@ -121,7 +113,6 @@ async function generatePlaylist(accessToken, mood, genres, numSongs) {
         topArtistIds = topArtistsResponse.data.items.map(artist => artist.id);
       }
     } catch (err) {
-      // If we couldn't get top artists, that's okay, we'll continue anyway
       console.log('Could not fetch user top artists:', err.message);
     }
     
@@ -163,7 +154,6 @@ async function generatePlaylist(accessToken, mood, genres, numSongs) {
             }
           }
         } catch (searchError) {
-          // If this search failed, log it and try the next one
           console.error(`Error searching with query "${query}":`, searchError.message);
           continue;
         }
@@ -192,7 +182,6 @@ async function generatePlaylist(accessToken, mood, genres, numSongs) {
               }
             }
           } catch (artistError) {
-            // If we couldn't get this artist's songs, try the next one
             console.error(`Error getting tracks for artist ${artistId}:`, artistError.message);
             continue;
           }
@@ -305,7 +294,6 @@ app.post('/api/generate-playlist', async (req, res) => {
       }
     );
 
-    // Get the ID of the playlist we just created
     const playlistId = playlistResponse.data.id;
     
     // Make a list of all the song URIs (Spotify's way of identifying songs)
@@ -332,7 +320,6 @@ app.post('/api/generate-playlist', async (req, res) => {
       tracks: trackResults
     });
   } catch (error) {
-    // If anything went wrong, tell the user
     console.error('Error generating playlist:', error);
     res.status(500).json({
       success: false,
